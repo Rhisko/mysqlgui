@@ -13,7 +13,7 @@ declare(strict_types=1);
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = ''; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = 'e9,xjDMf2~.D@2dUFub=;s>R=k&34E7)\UkksMZ8.m.['; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
@@ -25,11 +25,73 @@ $i = 0;
  */
 $i++;
 /* Authentication type */
+// $cfg['Servers'][$i]['auth_type'] = 'cookie';
+/* Server parameters */
+// $cfg['Servers'][$i]['host'] = 'localhost';
+// $cfg['Servers'][$i]['compress'] = false;
+// $cfg['Servers'][$i]['AllowNoPassword'] = false;
+
+/* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
-$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['host'] = 'ucoach';
+$cfg['Servers'][$i]['connect_type'] = 'tcp';
 $cfg['Servers'][$i]['compress'] = false;
+/* Select mysqli if your server has it */
+$cfg['Servers'][$i]['extension'] = 'mysql';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['TempDir'] = 'tmp';
+$cfg['Servers'][$i]['AllowRoot'] = false;
+
+/*
+* Second server
+*/
+$i++;
+/* Authentication type */
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
+/* Server parameters */
+$cfg['Servers'][$i]['host'] = 'newplayer';
+$cfg['Servers'][$i]['connect_type'] = 'tcp';
+$cfg['Servers'][$i]['compress'] = false;
+/* Select mysqli if your server has it */
+$cfg['Servers'][$i]['extension'] = 'mysql';
+$cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['TempDir'] = 'tmp';
+$cfg['Servers'][$i]['AllowRoot'] = false;
+/*
+* Third server
+*/
+// $i++;
+// /* Authentication type */
+// $cfg['Servers'][$i]['auth_type'] = 'cookie';
+// /* Server parameters */
+// $cfg['Servers'][$i]['host'] = 'svr4.mysql';
+// $cfg['Servers'][$i]['connect_type'] = 'tcp';
+// $cfg['Servers'][$i]['compress'] = false;
+// /* Select mysqli if your server has it */
+// $cfg['Servers'][$i]['extension'] = 'mysql';
+// $cfg['Servers'][$i]['AllowNoPassword'] = false;
+// $cfg['TempDir'] = 'tmp';
+// $cfg['Servers'][$i]['AllowRoot'] = false;
+
+// /*
+// * Fourth server
+// */
+// $i++;
+// /* Authentication type */
+// $cfg['Servers'][$i]['auth_type'] = 'cookie';
+// /* Server parameters */
+// $cfg['Servers'][$i]['host'] = 'svr5.mysql';
+// $cfg['Servers'][$i]['connect_type'] = 'tcp';
+// $cfg['Servers'][$i]['compress'] = false;
+// /* Select mysqli if your server has it */
+// $cfg['Servers'][$i]['extension'] = 'mysql';
+// $cfg['Servers'][$i]['AllowNoPassword'] = false;
+// $cfg['TempDir'] = 'tmp';
+// $cfg['Servers'][$i]['AllowRoot'] = false;
+
+
+
 
 /**
  * phpMyAdmin configuration storage settings.
